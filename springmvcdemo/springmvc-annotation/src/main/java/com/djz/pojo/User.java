@@ -1,4 +1,4 @@
-package com.djz.entity;
+package com.djz.pojo;
 
 import java.io.Serializable;
 import java.util.List;
