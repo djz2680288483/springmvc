@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,10 +25,23 @@ public class BookController {
 
     @RequestMapping("/list")
     public String getAll(Model model) {
-       List<Books> list=service.selectAllBooks();
-       model.addAttribute("list",list);
+        List<Books> list = service.selectAllBooks();
+        model.addAttribute("list", list);
         return "book";
     }
 
+    //跳转到增加书籍页面
+    @GetMapping("/toadd")
+    public String toaddPage() {
+        return "addbook";
+    }
+
+    //添加书籍请求
+    @PostMapping("/add")
+    public String addBook(Books book) {
+        System.out.println("====" + book + "====");
+        service.addBook(book);
+        return "redirect:/book/list";
+    }
 
 }

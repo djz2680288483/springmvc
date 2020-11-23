@@ -19,20 +19,22 @@ public class BookServiceImpl implements IBookService {
         this.bookMapper = bookMapper;
     }
 
-    public void addBook(Books book) {
+    public int addBook(Books book) {
 
+        return bookMapper.addBook(book);
     }
 
-    public void updateBookById(Books books) {
-
+    public int updateBookById(Books books) {
+        return bookMapper.updateBookById(books);
     }
 
-    public void deleteBookById(int bookId) {
-
+    public int deleteBookById(int bookId) {
+        return bookMapper.deleteBookById(bookId);
     }
 
     public Books selectBookById(int bookId) {
-        return null;
+
+        return bookMapper.selectBookById(bookId);
     }
 
     public List<Books> selectAllBooks() {

@@ -10,11 +10,11 @@ import java.util.List;
  */
 public interface BookMapper {
 
-    void addBook(Books book);
+    int addBook(Books book);
 
-    void updateBookById(Books books);
+    int updateBookById(Books books);
 
-    void deleteBookById(int bookId);
+    int deleteBookById(int bookId);
 
     Books selectBookById(int bookId);
 
