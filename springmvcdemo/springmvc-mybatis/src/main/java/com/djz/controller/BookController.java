@@ -61,4 +61,17 @@ public class BookController {
         return "redirect:/book/list";
     }
 
+    //删除书籍请求
+    @GetMapping("/delete/{bookId}")
+    public String deleteBook(@PathVariable("bookId") int bookId) {
+        service.deleteBookById(bookId);
+        return "redirect:/book/list";
+    }
+
+    @RequestMapping(value = "/query",method = RequestMethod.POST)
+    public String queryBook(String bookName,Model model){
+       List<Books> books= service.queryBookByName(bookName);
+       model.addAttribute("list",books);
+        return "book1";
+    }
 }

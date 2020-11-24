@@ -42,4 +42,8 @@ public class BookServiceImpl implements IBookService {
 
         return bookMapper.selectAllBooks();
     }
+
+    public List<Books> queryBookByName(String bookName) {
+        return bookMapper.queryBookByName(bookName);
+    }
 }

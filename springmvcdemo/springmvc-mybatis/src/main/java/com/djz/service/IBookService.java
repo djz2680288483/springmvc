@@ -19,4 +19,6 @@ public interface IBookService {
     Books selectBookById(int bookId);
 
     List<Books> selectAllBooks();
+
+    List<Books> queryBookByName(String bookName);
 }

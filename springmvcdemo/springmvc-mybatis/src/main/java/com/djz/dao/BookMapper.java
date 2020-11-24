@@ -1,6 +1,7 @@
 package com.djz.dao;
 
 import com.djz.pojo.Books;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,9 +15,11 @@ public interface BookMapper {
 
     int updateBookById(Books books);
 
-    int deleteBookById(int bookId);
+    int deleteBookById(@Param("bookId") int bookId);
 
-    Books selectBookById(int bookId);
+    Books selectBookById(@Param("bookId") int bookId);
 
     List<Books> selectAllBooks();
+
+    List<Books> queryBookByName(@Param("bookName")  String bookName);
 }
