@@ -39,7 +39,7 @@ public class BookController {
     //添加书籍请求
     @PostMapping("/add")
     public String addBook(Books book) {
-        System.out.println("====" + book + "====");
+    //    System.out.println("====" + book + "====");
         service.addBook(book);
         return "redirect:/book/list";
     }
@@ -56,7 +56,7 @@ public class BookController {
     //修改书籍请求
     @PostMapping("/update")
     public String updateBook(Books book) {
-        System.out.println("====" + book + "====");
+   //     System.out.println("====" + book + "====");
         service.updateBookById(book);
         return "redirect:/book/list";
     }
