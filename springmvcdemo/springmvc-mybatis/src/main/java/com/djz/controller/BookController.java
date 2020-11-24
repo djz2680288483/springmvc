@@ -44,4 +44,21 @@ public class BookController {
         return "redirect:/book/list";
     }
 
+
+    //跳转到修改书籍页面
+    @GetMapping("/toupdate")
+    public String toupdatePage(int bookId,Model model) {
+      Books books=  service.selectBookById(bookId);
+     model.addAttribute("book",books);
+        return "updatebook";
+    }
+
+    //修改书籍请求
+    @PostMapping("/update")
+    public String updateBook(Books book) {
+        System.out.println("====" + book + "====");
+        service.updateBookById(book);
+        return "redirect:/book/list";
+    }
+
 }

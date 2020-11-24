@@ -17,7 +17,7 @@
         delete from books where bookId=#{bookId};
     </delete>
 
-    <select id="selectBookById" resultType="int">
+    <select id="selectBookById" parameterType="int" resultType="books">
         select  * from  books where bookId=#{bookId};
     </select>
 

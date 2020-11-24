@@ -44,6 +44,7 @@
                     <th>书籍价格</th>
                     <th>书籍数量</th>
                     <th>书籍作者</th>
+                    <th>书籍操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,10 @@
                         <td>${book.price}</td>
                         <td>${book.bookCount}</td>
                         <td>${book.author}</td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/book/toupdate?bookId=${book.bookId}">修改</a>
+                           &nbsp;|&nbsp; <a href="#">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
